@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.geekidea.springbootplus.ecwitkey.mapper.CollectMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_id, supplier_id, create_time, tag, remark
+    </sql>
+
+    <select id="getCollectById" resultType="io.geekidea.springbootplus.ecwitkey.vo.CollectQueryVo">
+        select
+        <include refid="Base_Column_List"/>
+        from collect where id = #{id}
+    </select>
+
+    <select id="getCollectPageList" resultType="io.geekidea.springbootplus.ecwitkey.vo.CollectQueryVo">
+        select
+        <include refid="Base_Column_List"/>
+        from collect
+    </select>
+
+</mapper>

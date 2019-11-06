@@ -1,25 +1,8 @@
-/*
- * Copyright 2019-2029 geekidea(https://github.com/geekidea)
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package io.geekidea.springbootplus.system.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.Version;
 import io.geekidea.springbootplus.common.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,8 +12,6 @@ import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-import java.util.Date;
 
 /**
  * <pre>
@@ -38,7 +19,7 @@ import java.util.Date;
  * </pre>
  *
  * @author geekidea
- * @since 2019-10-24
+ * @since 2019-11-06
  */
 @Data
 @Accessors(chain = true)
@@ -76,7 +57,7 @@ public class SysUser extends BaseEntity {
     @ApiModelProperty(value = "头像")
     private String head;
 
-    @ApiModelProperty(value = "备注")
+    @ApiModelProperty(value = "remark")
     private String remark;
 
     @ApiModelProperty(value = "状态，0：禁用，1：启用，2：锁定")
@@ -91,21 +72,96 @@ public class SysUser extends BaseEntity {
     private Long roleId;
 
     @ApiModelProperty(value = "逻辑删除，0：未删除，1：已删除")
-    @Null(message = "逻辑删除不用传")
-    @TableLogic
     private Integer deleted;
 
     @ApiModelProperty(value = "版本")
-    @Null(message = "版本不用传")
-    @Version
     private Integer version;
 
     @ApiModelProperty(value = "创建时间")
-    @Null(message = "创建时间不用传")
     private Date createTime;
 
     @ApiModelProperty(value = "修改时间")
-    @Null(message = "修改时间不用传")
     private Date updateTime;
+
+    @ApiModelProperty(value = "用户类型，0：个人/团队，1：企业")
+    @NotNull(message = "用户类型，0：个人/团队，1：企业不能为空")
+    private Integer userType;
+
+    @ApiModelProperty(value = "是否为服务商，0：否,1：是")
+    @NotNull(message = "是否为服务商，0：否,1：是不能为空")
+    private Integer isService;
+
+    @ApiModelProperty(value = "省")
+    @NotNull(message = "省不能为空")
+    private Integer province;
+
+    @ApiModelProperty(value = "市")
+    @NotNull(message = "市不能为空")
+    private Integer city;
+
+    @ApiModelProperty(value = "区/县")
+    @NotNull(message = "区/县不能为空")
+    private Integer zone;
+
+    @ApiModelProperty(value = "联系地址")
+    private String address;
+
+    @ApiModelProperty(value = "邮箱")
+    @NotBlank(message = "邮箱不能为空")
+    private String email;
+
+    @ApiModelProperty(value = "传真")
+    private Integer tax;
+
+    @ApiModelProperty(value = "传真")
+    private String scale;
+
+    @ApiModelProperty(value = "介绍")
+    private String intro;
+
+    @ApiModelProperty(value = "微信号")
+    private String wechat;
+
+    @ApiModelProperty(value = "承接项目类型")
+    private Integer proType;
+
+    @ApiModelProperty(value = "身份证号")
+    private String idNum;
+
+    @ApiModelProperty(value = "身份证正面")
+    private String idFront;
+
+    @ApiModelProperty(value = "身份证背面")
+    private String idBack;
+
+    @ApiModelProperty(value = "身份证有效期")
+    private String idValidity;
+
+    @ApiModelProperty(value = "出生日期")
+    private String birthday;
+
+    @ApiModelProperty(value = "星座")
+    private String constellation;
+
+    @ApiModelProperty(value = "专业")
+    private Integer major;
+
+    @ApiModelProperty(value = "团队名称")
+    private String teamName;
+
+    @ApiModelProperty(value = "公司名称")
+    private String companyName;
+
+    @ApiModelProperty(value = "企业组织机构代码")
+    private String licenseId;
+
+    @ApiModelProperty(value = "网址")
+    private String website;
+
+    @ApiModelProperty(value = "公司类型")
+    private String companyType;
+
+    @ApiModelProperty(value = "业务类型")
+    private String serviceType;
 
 }

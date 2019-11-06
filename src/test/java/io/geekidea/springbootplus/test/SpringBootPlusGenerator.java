@@ -41,7 +41,7 @@ public class SpringBootPlusGenerator {
 
         // 组件作者等配置
         codeGenerator
-                .setModuleName("foobar")
+                .setModuleName("ecwitkey")
                 .setAuthor("geekidea")
                 .setPkIdColumnName("id");
 
@@ -60,7 +60,7 @@ public class SpringBootPlusGenerator {
 
         // 生成业务相关代码
         codeGenerator
-                .setGeneratorController(true)
+                .setGeneratorController(false)
                 .setGeneratorService(true)
                 .setGeneratorServiceImpl(true)
                 .setGeneratorMapper(true)
@@ -78,7 +78,7 @@ public class SpringBootPlusGenerator {
         // 需要生成的表数组
         // xxx,yyy,zzz为需要生成代码的表名称
         String[] tables = {
-                "foo_bar"
+                "category","project_order","project_requirement","project_source","project_examine","order_pay","order_bidding","order_progress","order_check","order_rights","order_comment","collect","under_case","article","sys_setting"
         };
 
         // 循环生成

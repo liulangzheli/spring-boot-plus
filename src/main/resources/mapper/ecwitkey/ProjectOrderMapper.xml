@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.geekidea.springbootplus.ecwitkey.mapper.ProjectOrderMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_id, create_time, pay_time, examine_time, pick_time, check_time, category_id, major, province, city, end_time, period, soft_supplier, soft_name, intro, state, remark
+    </sql>
+
+    <select id="getProjectOrderById" resultType="io.geekidea.springbootplus.ecwitkey.vo.ProjectOrderQueryVo">
+        select
+        <include refid="Base_Column_List"/>
+        from project_order where id = #{id}
+    </select>
+
+    <select id="getProjectOrderPageList" resultType="io.geekidea.springbootplus.ecwitkey.vo.ProjectOrderQueryVo">
+        select
+        <include refid="Base_Column_List"/>
+        from project_order
+    </select>
+
+</mapper>

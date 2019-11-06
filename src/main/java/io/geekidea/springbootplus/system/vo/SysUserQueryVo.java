@@ -1,19 +1,3 @@
-/*
- * Copyright 2019-2029 geekidea(https://github.com/geekidea)
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package io.geekidea.springbootplus.system.vo;
 
 import io.swagger.annotations.ApiModel;
@@ -30,7 +14,7 @@ import java.util.Date;
  * </pre>
  *
  * @author geekidea
- * @date 2019-10-24
+ * @date 2019-11-06
  */
 @Data
 @Accessors(chain = true)
@@ -46,6 +30,12 @@ public class SysUserQueryVo implements Serializable {
 
     @ApiModelProperty(value = "昵称")
     private String nickname;
+
+    @ApiModelProperty(value = "密码")
+    private String password;
+
+    @ApiModelProperty(value = "盐值")
+    private String salt;
 
     @ApiModelProperty(value = "手机号码")
     private String phone;
@@ -79,5 +69,80 @@ public class SysUserQueryVo implements Serializable {
 
     @ApiModelProperty(value = "修改时间")
     private Date updateTime;
+
+    @ApiModelProperty(value = "用户类型，0：个人/团队，1：企业")
+    private Integer userType;
+
+    @ApiModelProperty(value = "是否为服务商，0：否,1：是")
+    private Integer isService;
+
+    @ApiModelProperty(value = "省")
+    private Integer province;
+
+    @ApiModelProperty(value = "市")
+    private Integer city;
+
+    @ApiModelProperty(value = "区/县")
+    private Integer zone;
+
+    @ApiModelProperty(value = "联系地址")
+    private String address;
+
+    @ApiModelProperty(value = "邮箱")
+    private String email;
+
+    @ApiModelProperty(value = "传真")
+    private Integer tax;
+
+    @ApiModelProperty(value = "传真")
+    private String scale;
+
+    @ApiModelProperty(value = "介绍")
+    private String intro;
+
+    @ApiModelProperty(value = "微信号")
+    private String wechat;
+
+    @ApiModelProperty(value = "承接项目类型")
+    private Integer proType;
+
+    @ApiModelProperty(value = "身份证号")
+    private String idNum;
+
+    @ApiModelProperty(value = "身份证正面")
+    private String idFront;
+
+    @ApiModelProperty(value = "身份证背面")
+    private String idBack;
+
+    @ApiModelProperty(value = "身份证有效期")
+    private String idValidity;
+
+    @ApiModelProperty(value = "出生日期")
+    private String birthday;
+
+    @ApiModelProperty(value = "星座")
+    private String constellation;
+
+    @ApiModelProperty(value = "专业")
+    private Integer major;
+
+    @ApiModelProperty(value = "团队名称")
+    private String teamName;
+
+    @ApiModelProperty(value = "公司名称")
+    private String companyName;
+
+    @ApiModelProperty(value = "企业组织机构代码")
+    private String licenseId;
+
+    @ApiModelProperty(value = "网址")
+    private String website;
+
+    @ApiModelProperty(value = "公司类型")
+    private String companyType;
+
+    @ApiModelProperty(value = "业务类型")
+    private String serviceType;
 
 }
