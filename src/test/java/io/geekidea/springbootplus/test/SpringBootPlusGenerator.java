@@ -60,7 +60,7 @@ public class SpringBootPlusGenerator {
 
         // 生成业务相关代码
         codeGenerator
-                .setGeneratorController(false)
+                .setGeneratorController(true)
                 .setGeneratorService(true)
                 .setGeneratorServiceImpl(true)
                 .setGeneratorMapper(true)

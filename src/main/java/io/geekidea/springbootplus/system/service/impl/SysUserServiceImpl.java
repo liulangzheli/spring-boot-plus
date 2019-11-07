@@ -75,7 +75,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserMapper, SysUser> 
             throw new BusinessException("用户名已存在");
         }
         // 校验部门和角色
-        checkDepartmentAndRole(sysUser.getDepartmentId(), sysUser.getRoleId());
+        //checkDepartmentAndRole(sysUser.getDepartmentId(), sysUser.getRoleId());
         // 生成盐值
         String salt = SaltUtil.generateSalt();
         sysUser.setSalt(salt);
@@ -93,7 +93,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserMapper, SysUser> 
     @Override
     public boolean updateSysUser(SysUser sysUser) throws Exception {
         // 校验部门和角色
-        checkDepartmentAndRole(sysUser.getDepartmentId(), sysUser.getRoleId());
+        //checkDepartmentAndRole(sysUser.getDepartmentId(), sysUser.getRoleId());
         // 获取系统用户
         SysUser updateSysUser = getById(sysUser.getId());
         if (updateSysUser == null) {
