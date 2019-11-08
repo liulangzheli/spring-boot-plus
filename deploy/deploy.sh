@@ -33,7 +33,7 @@ IS_UPDATE=0
 # 如果有，则执行git pull
 # 如果没有，则clone
 if [ ! -d "spring-boot-plus" ]; then
-  git clone https://github.com/geekidea/spring-boot-plus.git
+  git clone https://github.com/liulangzheli/spring-boot-plus.git
   cd spring-boot-plus
 else
   cd spring-boot-plus
