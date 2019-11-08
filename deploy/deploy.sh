@@ -52,7 +52,7 @@ pwd
 
 # 2. maven打包
 mvn clean install
-mvn clean package -Ptest -Dmaven.test.skip=true
+mvn clean package -Ptest
 
 pwd
 # 判断是否生成成功
